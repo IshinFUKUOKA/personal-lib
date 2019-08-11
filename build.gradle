@@ -49,6 +49,21 @@ uploadArchives {
 	repositories {
 		mavenDeployer {
 			repository(url: "file:${System.getProperty('user.home')}/.m2/repository")
+			repository(url: "file:${projectDir}")
+		}
+	}
+}
+
+[install.repositories.mavenInstaller, uploadArchives.repositories.mavenDeployer]*.pom*.whenConfigured { pom ->
+	pom.project {
+		inceptionYear '2019'
+		packaging 'jar'
+		licenses {
+			license {
+				name 'The MIT License'
+				url 'https://opensource.org/licenses/MIT'
+				distribution 'repo'
+			}
 		}
 	}
 }

@@ -111,3 +111,7 @@ curl -v  -H "x-custom-header: correctcontent" localhost:8080/ping
 * Connection #0 to host localhost left intact
 Connected.⏎
 ```
+
+
+
+License: This software is released under the MIT License, see LICENSE.txt.
