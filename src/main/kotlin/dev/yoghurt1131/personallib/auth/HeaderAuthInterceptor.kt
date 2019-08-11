@@ -14,7 +14,7 @@ class HeaderAuthInterceptor(private val value: String, private val headerName: S
 
     override fun preHandle(request: HttpServletRequest, response: HttpServletResponse, handler: Any): Boolean {
         val handerMethod = handler as HandlerMethod
-        val annotation = handerMethod.getMethodAnnotation(HambleAuth::class.java)
+        val annotation = handerMethod.getMethodAnnotation(HumbleAuth::class.java)
         annotation?.let {
             logger.debug("Start Header Base Check...")
             if(request.getHeader(headerName)?.equals(value) != true) {
